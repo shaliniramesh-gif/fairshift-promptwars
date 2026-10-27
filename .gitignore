@@ -1,0 +1,44 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Production build outputs
+dist/
+build/
+dist-ssr/
+*.local
+
+# Testing & Coverage
+coverage/
+*.lcov
+.nyc_output/
+
+# Environment and Secrets (CRITICAL for security)
+.env*
+!.env.example
+
+# Logs and runtime caches
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+.eslintcache
+
+# Editor & OS files
+.DS_Store
+Thumbs.db
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# AI Studio / Temporary test caches
+.cache/
+tmp/
+*.tmp

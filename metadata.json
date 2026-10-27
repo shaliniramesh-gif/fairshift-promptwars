@@ -1,0 +1,6 @@
+{
+  "name": "FairShift — Decent Work Intelligence Platform",
+  "description": "Multi-industry workforce management and fatigue intelligence platform aligned with UN SDG 8 (Decent Work and Economic Growth), featuring BarrierBridge accessibility and FairShift Pulse explainable AI.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,223 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    
+    /* Default / Healthcare: Teal & Mint */
+    --primary: #0d9488;
+    --primary-hover: #0f766e;
+    --primary-light: #ccfbf1;
+    --primary-dark: #134e4a;
+    --secondary: #10b981;
+    --secondary-light: #d1fae5;
+    --accent: #14b8a6;
+    --accent-gold: #f59e0b;
+    
+    --bg-page: #f8fafc;
+    --bg-card: #ffffff;
+    --bg-surface: #f1f5f9;
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --text-subtle: #94a3b8;
+    --border-color: #e2e8f0;
+    --border-subtle: #f1f5f9;
+    
+    --focus-ring: #0d9488;
+  }
+
+  /* Industry Themes */
+  [data-theme="healthcare"] {
+    --primary: #0d9488; /* Teal */
+    --primary-hover: #0f766e;
+    --primary-light: #f0fdfa;
+    --primary-dark: #115e59;
+    --secondary: #059669; /* Mint / Green */
+    --secondary-light: #ecfdf5;
+    --accent: #2dd4bf;
+    --focus-ring: #0d9488;
+  }
+
+  [data-theme="manufacturing"] {
+    --primary: #334155; /* Charcoal */
+    --primary-hover: #1e293b;
+    --primary-light: #f8fafc;
+    --primary-dark: #0f172a;
+    --secondary: #d97706; /* Amber */
+    --secondary-light: #fef3c7;
+    --accent: #f59e0b;
+    --focus-ring: #d97706;
+  }
+
+  [data-theme="education"] {
+    --primary: #4338ca; /* Indigo */
+    --primary-hover: #3730a3;
+    --primary-light: #eef2ff;
+    --primary-dark: #312e81;
+    --secondary: #2563eb; /* Blue */
+    --secondary-light: #eff6ff;
+    --accent: #d97706; /* Gold */
+    --focus-ring: #4338ca;
+  }
+
+  [data-theme="corporate"] {
+    --primary: #1e3a8a; /* Deep Navy */
+    --primary-hover: #172554;
+    --primary-light: #eff6ff;
+    --primary-dark: #0f172a;
+    --secondary: #0891b2; /* Cyan */
+    --secondary-light: #ecfeff;
+    --accent: #06b6d4;
+    --focus-ring: #0284c7;
+  }
+
+  [data-theme="retail"] {
+    --primary: #7c3aed; /* Violet */
+    --primary-hover: #6d28d9;
+    --primary-light: #f5f3ff;
+    --primary-dark: #4c1d95;
+    --secondary: #2563eb; /* Blue */
+    --secondary-light: #eff6ff;
+    --accent: #10b981; /* Emerald */
+    --focus-ring: #7c3aed;
+  }
+
+  /* Dark Mode */
+  .dark {
+    --bg-page: #0b0f17;
+    --bg-card: #131b26;
+    --bg-surface: #1e293b;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --text-subtle: #64748b;
+    --border-color: #243042;
+    --border-subtle: #1a2230;
+  }
+
+  .dark[data-theme="healthcare"] {
+    --primary: #2dd4bf;
+    --primary-hover: #14b8a6;
+    --primary-light: #134e4a;
+    --primary-dark: #042f2e;
+    --secondary: #34d399;
+    --secondary-light: #064e3b;
+  }
+
+  .dark[data-theme="manufacturing"] {
+    --primary: #94a3b8;
+    --primary-hover: #cbd5e1;
+    --primary-light: #1e293b;
+    --primary-dark: #0f172a;
+    --secondary: #fbbf24;
+    --secondary-light: #78350f;
+  }
+
+  .dark[data-theme="education"] {
+    --primary: #818cf8;
+    --primary-hover: #6366f1;
+    --primary-light: #312e81;
+    --primary-dark: #1e1b4b;
+    --secondary: #60a5fa;
+    --secondary-light: #1e3a8a;
+  }
+
+  .dark[data-theme="corporate"] {
+    --primary: #38bdf8;
+    --primary-hover: #0ea5e9;
+    --primary-light: #075985;
+    --primary-dark: #082f49;
+    --secondary: #22d3ee;
+    --secondary-light: #155e75;
+  }
+
+  .dark[data-theme="retail"] {
+    --primary: #a78bfa;
+    --primary-hover: #8b5cf6;
+    --primary-light: #4c1d95;
+    --primary-dark: #2e1065;
+    --secondary: #60a5fa;
+    --secondary-light: #1e3a8a;
+  }
+
+  /* Accessibility: High Contrast */
+  .high-contrast {
+    --bg-page: #000000 !important;
+    --bg-card: #0a0a0a !important;
+    --bg-surface: #1f1f1f !important;
+    --text-main: #ffffff !important;
+    --text-muted: #e5e5e5 !important;
+    --text-subtle: #cccccc !important;
+    --border-color: #ffffff !important;
+    --border-subtle: #888888 !important;
+    --primary: #00ffff !important;
+    --secondary: #ffff00 !important;
+    --accent: #00ff66 !important;
+    --focus-ring: #ffffff !important;
+  }
+
+  /* Accessibility: Text Scaling */
+  html.text-normal {
+    font-size: 16px;
+  }
+  html.text-medium {
+    font-size: 18px;
+  }
+  html.text-large {
+    font-size: 20px;
+  }
+  html.text-xlarge {
+    font-size: 22px;
+  }
+
+  /* Accessibility: Reduced Motion */
+  @media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  .force-reduced-motion *,
+  .force-reduced-motion ::before,
+  .force-reduced-motion ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom interactive scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.35);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.6);
+}
+
+/* Accessible focus ring */
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
